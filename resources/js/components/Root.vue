@@ -4,7 +4,7 @@
         <Computer/>
         <OptionsButtons/>
         <ScoreKeeper/>
-    </dv>
+    </div>
 </template>
 
 <script>

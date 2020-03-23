@@ -1,29 +1,37 @@
 <template>
+    <div>
 
+    </div>
 </template>
 
 <script>
 export default {
     data: function() {
-        choice: "Choosing"
+        return {
+            choice: ""
+        }
+
     },
     mounted: function() {
-        this.$root.$on('rockEvent', 'rockHandle');
-        this.$root.$on('paperEvent', 'paperHandle');
-        this.$root.$on('scissorEvent', 'scissorHandle');
+        this.$root.$on('rockEvent', this.rockHandle);
+        this.$root.$on('paperEvent', this.paperHandle);
+        this.$root.$on('scissorEvent', this.scissorHandle);
     },
-    rockEvent: function() {
-        this.choice = "Rock";
-        this.$root.$emit('rockEvent');
+    methods: {
+        rockHandle: function() {
+            this.choice = "Rock";
+            this.$root.$emit('rockNewEvent', this.choice);
     },
-    paperEvent: function() {
-        this.choice = "Paper";
-        this.$root.$emit('rockEvent');
+        paperHandle: function() {
+            this.choice = "Paper";
+            this.$root.$emit('paperNewEvent', this.choice);
     },
-    scissorEvent: function() {
-        this.choice = "Scissor";
-        this.$root.$emit('rockEvent');
+        scissorHandle: function() {
+            this.choice = "Scissor";
+            this.$root.$emit('scissorNewEvent', this.choice);
     }
+    }
+
 }
 </script>
 <style scoped>

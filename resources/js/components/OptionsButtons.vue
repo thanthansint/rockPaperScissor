@@ -1,8 +1,8 @@
 <template>
-    <div>
-        <button id="rock" @click="rockClick">Rock</button>
-        <button @click="paperClick">Paper</button>
-        <button @click="scissorClick">Scissor</button>
+    <div class="container"><br><br>
+        <button id="button-setting" class="btn btn-success rounded-circle" @click="rockClick">Rock</button>
+        <button id="button-setting" class="btn btn-warning rounded-circle" @click="paperClick">Paper</button>
+        <button id="button-setting" class="btn btn-primary rounded-circle" @click="scissorClick">Scissor</button>
     </div>
 </template>
 
@@ -22,5 +22,9 @@ export default {
 }
 </script>
 <style scoped>
-
+#button-setting {
+    width: 7vw;
+    height: 8vh;
+    margin: 0 15px;
+}
 </style>
